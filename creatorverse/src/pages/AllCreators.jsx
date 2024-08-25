@@ -2,11 +2,13 @@
 
 
 
+
+
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import supabase from '../client';
+import supabase from '../client'; // Adjust the path as necessary
 import Card from '../components/Card';
-
 
 const AllCreators = () => {
   const [creators, setCreators] = useState([]);
@@ -17,7 +19,7 @@ const AllCreators = () => {
     const fetchCreators = async () => {
       try {
         const { data, error } = await supabase
-          .from('creators') // Replace 'creators' with your actual table name
+          .from('creators') // Replace 'creators' with your table name
           .select('*');
 
         if (error) {
@@ -38,7 +40,7 @@ const AllCreators = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>; // You can replace this with a spinner if you like
+    return <p>Loading...</p>;
   }
 
   if (error) {
@@ -53,13 +55,15 @@ const AllCreators = () => {
       </Link>
       {creators.length > 0 ? (
         creators.map(creator => (
-          <Card
-            key={creator.id} // Assuming each creator has a unique 'id'
-            name={creator.name}
-            url={creator.url}
-            description={creator.description}
-            imageURL={creator.imageURL}
-          />
+          <div key={creator.id} style={{ marginBottom: '20px' }}>
+            <Card
+              id={creator.id}  // Ensure the id is passed to the Card component
+              name={creator.name}
+              url={creator.url}
+              description={creator.description}
+              imageURL={creator.imageURL}
+            />
+          </div>
         ))
       ) : (
         <p>No content creators found in the database.</p>

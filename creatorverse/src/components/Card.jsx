@@ -1,12 +1,19 @@
-// components/Card.jsx
-
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaEdit } from 'react-icons/fa';
 
-const Card = ({ name, url, description, imageURL }) => {
+const Card = ({ id, name, url, description, imageURL }) => {
+  console.log("Card Component ID:", id); // Debugging: Check if id is received
+
   return (
     <div style={styles.card}>
       {imageURL && <img src={imageURL} alt={name} style={styles.image} />}
-      <h2 style={styles.name}>{name}</h2>
+      <div style={styles.header}>
+        <h2 style={styles.name}>{name}</h2>
+        <Link to={`/creator/${id}`} style={styles.editIcon}> {/* Link to ViewCreator page */}
+          <FaEdit />
+        </Link>
+      </div>
       <p style={styles.description}>{description}</p>
       <a href={url} style={styles.link} target="_blank" rel="noopener noreferrer">
         Visit Website
@@ -23,6 +30,12 @@ const styles = {
     margin: '16px 0',
     maxWidth: '400px',
     boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+    position: 'relative',
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   image: {
     width: '100%',
@@ -41,6 +54,14 @@ const styles = {
     color: '#007bff',
     textDecoration: 'none',
     fontSize: '1em',
+    display: 'inline-block',
+    marginBottom: '16px',
+  },
+  editIcon: {
+    color: '#007bff',
+    fontSize: '1.2em',
+    textDecoration: 'none',
+    cursor: 'pointer',
   },
 };
 
