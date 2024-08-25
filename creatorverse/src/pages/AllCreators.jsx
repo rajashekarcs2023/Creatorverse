@@ -5,7 +5,7 @@
 
 
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import supabase from '../client'; // Adjust the path as necessary
 import Card from '../components/Card';
@@ -14,6 +14,8 @@ const AllCreators = () => {
   const [creators, setCreators] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const creatorsSectionRef = useRef(null); // Reference to the creators section
 
   useEffect(() => {
     const fetchCreators = async () => {
@@ -39,6 +41,10 @@ const AllCreators = () => {
     fetchCreators();
   }, []);
 
+  const handleViewAllCreators = () => {
+    creatorsSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -49,11 +55,18 @@ const AllCreators = () => {
 
   return (
     <div>
-      <h1>Content Creators</h1>
-      <Link to="/new">
-        <button>Add a New Content Creator</button>
-      </Link>
-      <div style={styles.cardContainer}>
+      {/* Central Buttons Section */}
+      <div style={styles.centeredButtons}>
+        <button onClick={handleViewAllCreators} style={styles.button}>
+          View All Creators
+        </button>
+        <Link to="/new" style={styles.buttonLink}>
+          <button style={styles.button}>Add Content Creator</button>
+        </Link>
+      </div>
+
+      {/* Hidden Section that will be scrolled to */}
+      <div ref={creatorsSectionRef} style={styles.cardContainer}>
         {creators.length > 0 ? (
           creators.map(creator => (
             <Card
@@ -74,11 +87,32 @@ const AllCreators = () => {
 };
 
 const styles = {
+  centeredButtons: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+  },
+  button: {
+    margin: '10px',
+    padding: '10px 20px',
+    fontSize: '1.2em',
+    cursor: 'pointer',
+    backgroundColor: '#007bff',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+  },
+  buttonLink: {
+    textDecoration: 'none',
+  },
   cardContainer: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'center',
     marginTop: '20px',
+    gap: '16px',
   },
 };
 
