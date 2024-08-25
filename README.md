@@ -36,7 +36,8 @@ Here's a walkthrough of implemented required features:
 
 👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<a href="//imgur.com/a/oWL5hK7"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+[View the Imgur Album](https://imgur.com/a/oWL5hK7)
+
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  👉🏿 GIF tool here
