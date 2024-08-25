@@ -1,11 +1,11 @@
 
-# WEB103 Prework - *👉🏿 Creatorverse*
+# WEB103 Prework - *Creatorverse*
 
-Submitted by: **👉🏿 Rajashekar Vennavelli**
+Submitted by: **Rajashekar Vennavelli**
 
-About this web app: **👉🏿 This web app displays your favorite content creators and we can add, edit and delete the content creators**
+About this web app: **This web app displays your favorite content creators and we can add, edit and delete the content creators**
 
-Time spent: **👉🏿 13** hours
+Time spent: **13** hours
 
 ## Required Features
 
