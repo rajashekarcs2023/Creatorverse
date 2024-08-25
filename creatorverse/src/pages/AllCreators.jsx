@@ -55,17 +55,19 @@ const AllCreators = () => {
 
   return (
     <div>
-      {/* Central Buttons Section */}
-      <div style={styles.centeredButtons}>
-        <button onClick={handleViewAllCreators} style={styles.button}>
-          View All Creators
-        </button>
-        <Link to="/new" style={styles.buttonLink}>
-          <button style={styles.button}>Add Content Creator</button>
-        </Link>
+      {/* Main Screen with Centered Buttons and Background */}
+      <div style={styles.mainScreen}>
+        <div style={styles.centeredButtons}>
+          <button onClick={handleViewAllCreators} style={styles.button}>
+            View All Creators
+          </button>
+          <Link to="/new" style={styles.buttonLink}>
+            <button style={styles.button}>Add Content Creator</button>
+          </Link>
+        </div>
       </div>
 
-      {/* Hidden Section that will be scrolled to */}
+      {/* Content Creators Section with Different Background */}
       <div ref={creatorsSectionRef} style={styles.cardContainer}>
         {creators.length > 0 ? (
           creators.map(creator => (
@@ -87,12 +89,17 @@ const AllCreators = () => {
 };
 
 const styles = {
-  centeredButtons: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
+  mainScreen: {
     height: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundImage: 'url("/src/assets/mainscreen.jpg")', // Replace with your main screen background image
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
+  centeredButtons: {
+    textAlign: 'center',
   },
   button: {
     margin: '10px',
@@ -113,6 +120,10 @@ const styles = {
     justifyContent: 'center',
     marginTop: '20px',
     gap: '16px',
+    padding: '40px 0', // Adding some padding around the cards
+    backgroundImage: 'url("/src/assets/contentscreen.jpg")', // Replace with your cards section background image
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
 };
 
