@@ -34,17 +34,12 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-[View the Imgur Album](https://imgur.com/a/oWL5hK7)
+![Creatorverse](https://github.com/user-attachments/assets/1615f1b8-d7f8-46df-83c1-abc1b06ffe93)
 
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+
+GIF created with ...  👉🏿 Licecap
+
 
 ## Notes - Challenges while building this
 Building the Creatorverse app presented several challenges. Ensuring a responsive design for the content creator cards was tricky, particularly getting them to display three per row and centering a single card when fewer were present. Implementing smooth scrolling between sections required careful integration of JavaScript with React's state management for a seamless user experience.
