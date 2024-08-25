@@ -23,46 +23,47 @@ const Card = ({ id, name, url, description, imageURL }) => {
 };
 
 const styles = {
-  card: {
-    border: '1px solid #ddd',
-    borderRadius: '8px',
-    padding: '16px',
-    margin: '16px 0',
-    maxWidth: '400px',
-    boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-    position: 'relative',
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  image: {
-    width: '100%',
-    height: 'auto',
-    borderRadius: '4px',
-  },
-  name: {
-    fontSize: '1.5em',
-    margin: '16px 0 8px',
-  },
-  description: {
-    fontSize: '1em',
-    margin: '8px 0',
-  },
-  link: {
-    color: '#007bff',
-    textDecoration: 'none',
-    fontSize: '1em',
-    display: 'inline-block',
-    marginBottom: '16px',
-  },
-  editIcon: {
-    color: '#007bff',
-    fontSize: '1.2em',
-    textDecoration: 'none',
-    cursor: 'pointer',
-  },
-};
-
-export default Card;
+    card: {
+      border: '1px solid #ddd',
+      borderRadius: '8px',
+      padding: '16px',
+      margin: '8px',
+      flex: '1 1 calc(30% - 16px)', // Ensure cards are of equal size and allow space between them
+      maxWidth: 'calc(30% - 16px)', // Prevents the card from becoming too large
+      boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+      boxSizing: 'border-box',
+    },
+    header: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+    },
+    image: {
+      width: '100%',
+      height: 'auto',
+      borderRadius: '4px',
+    },
+    name: {
+      fontSize: '1.5em',
+      margin: '16px 0 8px',
+    },
+    description: {
+      fontSize: '1em',
+      margin: '8px 0',
+    },
+    link: {
+      color: '#007bff',
+      textDecoration: 'none',
+      fontSize: '1em',
+      display: 'inline-block',
+      marginBottom: '16px',
+    },
+    editIcon: {
+      color: '#007bff',
+      fontSize: '1.2em',
+      textDecoration: 'none',
+      cursor: 'pointer',
+    },
+  };
+  
+  export default Card;

@@ -53,23 +53,33 @@ const AllCreators = () => {
       <Link to="/new">
         <button>Add a New Content Creator</button>
       </Link>
-      {creators.length > 0 ? (
-        creators.map(creator => (
-          <div key={creator.id} style={{ marginBottom: '20px' }}>
+      <div style={styles.cardContainer}>
+        {creators.length > 0 ? (
+          creators.map(creator => (
             <Card
-              id={creator.id}  // Ensure the id is passed to the Card component
+              key={creator.id}
+              id={creator.id}
               name={creator.name}
               url={creator.url}
               description={creator.description}
               imageURL={creator.imageURL}
             />
-          </div>
-        ))
-      ) : (
-        <p>No content creators found in the database.</p>
-      )}
+          ))
+        ) : (
+          <p>No content creators found in the database.</p>
+        )}
+      </div>
     </div>
   );
+};
+
+const styles = {
+  cardContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: '20px',
+  },
 };
 
 export default AllCreators;
