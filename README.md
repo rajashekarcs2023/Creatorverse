@@ -25,8 +25,8 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [ ] Picocss is used to style HTML elements
-- [ ] The content creator items are displayed in a creative format, like cards instead of a list
-- [ ] An image of each content creator is shown on their content creator card
+- [X] The content creator items are displayed in a creative format, like cards instead of a list
+- [X] An image of each content creator is shown on their content creator card
 
 
 
