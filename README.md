@@ -1,11 +1,11 @@
 
 # WEB103 Prework - *👉🏿 Creatorverse*
 
-Submitted by: **👉🏿 your name here**
+Submitted by: **👉🏿 Rajashekar Vennavelli**
 
-About this web app: **👉🏿 app description here**
+About this web app: **👉🏿 This web app displays your favorite content creators and we can add, edit and delete the content creators**
 
-Time spent: **👉🏿 X** hours
+Time spent: **👉🏿 13** hours
 
 ## Required Features
 
@@ -43,13 +43,19 @@ GIF created with ...  👉🏿 GIF tool here
 [ScreenToGif](https://www.screentogif.com/) for Windows
 [peek](https://github.com/phw/peek) for Linux. -->
 
-## Notes
+## Notes - Challenges while building this
+Building the Creatorverse app presented several challenges. Ensuring a responsive design for the content creator cards was tricky, particularly getting them to display three per row and centering a single card when fewer were present. Implementing smooth scrolling between sections required careful integration of JavaScript with React's state management for a seamless user experience.
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+Managing multiple background images and ensuring they displayed correctly across various screen sizes was another hurdle. Designing the form for adding new content creators posed challenges in maintaining both functionality and aesthetics, especially on different devices.
+
+Integrating with Supabase for backend data storage required robust error handling and careful attention to data security. Throughout development, the focus remained on creating an intuitive user experience, with iterative improvements ensuring the app was both functional and user-friendly.
+
+This project was a learning journey, requiring adaptation to new challenges in responsive design, backend integration, and user interface design.
+
 
 ## License
 
-Copyright [👉🏿 yyyy] [👉🏿 name of copyright owner]
+Copyright [2024] [Rajashekar Vennavelli]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
