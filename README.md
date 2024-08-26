@@ -34,7 +34,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-![Creatorverse](https://github.com/user-attachments/assets/1615f1b8-d7f8-46df-83c1-abc1b06ffe93)
+
 <img src='./assets/Creatorverse.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
