@@ -99,52 +99,58 @@ const EditCreator = () => {
   };
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <p style={styles.loading}>Loading...</p>;
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <p style={styles.error}>{error}</p>;
   }
 
   return (
-    <div>
-      <h2>Edit Content Creator</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name:</label>
+    <div style={styles.container}>
+      <h2 style={styles.heading}>Edit Content Creator</h2>
+      <form onSubmit={handleSubmit} style={styles.form}>
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Name:</label>
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
+            style={styles.input}
           />
         </div>
-        <div>
-          <label>URL:</label>
+        <div style={styles.formGroup}>
+          <label style={styles.label}>URL:</label>
           <input
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             required
+            style={styles.input}
           />
         </div>
-        <div>
-          <label>Description:</label>
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Description:</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
+            style={styles.textarea}
           />
         </div>
-        <div>
-          <label>Image URL (optional):</label>
+        <div style={styles.formGroup}>
+          <label style={styles.label}>Image URL (optional):</label>
           <input
             type="url"
             value={imageURL}
             onChange={(e) => setImageURL(e.target.value)}
+            style={styles.input}
           />
         </div>
-        <button type="submit" disabled={loading}>Update Creator</button>
+        <button type="submit" style={{ ...styles.submitButton, opacity: loading ? 0.5 : 1 }} disabled={loading}>
+          Update Creator
+        </button>
       </form>
       <button
         onClick={handleDelete}
@@ -162,14 +168,86 @@ const EditCreator = () => {
 };
 
 const styles = {
+  container: {
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundImage: 'url("/src/assets/contentscreen.jpg")', // Replace with your background image
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    padding: '20px',
+    boxSizing: 'border-box',
+    color: 'white',
+  },
+  heading: {
+    marginBottom: '20px',
+    textAlign: 'center',
+  },
+  form: {
+    backgroundColor: 'rgba(0, 0, 0, 0.8)', // Dark background for the form
+    padding: '20px',
+    borderRadius: '10px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
+    maxWidth: '400px',
+    width: '100%',
+    boxSizing: 'border-box',
+  },
+  formGroup: {
+    marginBottom: '15px',
+  },
+  label: {
+    color: 'white',
+    display: 'block',
+    marginBottom: '5px',
+    fontSize: '1em',
+  },
+  input: {
+    width: '100%',
+    padding: '10px',
+    fontSize: '1em',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+    boxSizing: 'border-box',
+  },
+  textarea: {
+    width: '100%',
+    padding: '10px',
+    fontSize: '1em',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+    boxSizing: 'border-box',
+    minHeight: '100px',
+  },
+  submitButton: {
+    width: '100%',
+    padding: '10px',
+    backgroundColor: '#007bff',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    fontSize: '1.2em',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+  },
   deleteButton: {
     marginTop: '20px',
     padding: '10px',
     backgroundColor: '#dc3545',
     color: 'white',
     border: 'none',
-    borderRadius: '4px',
+    borderRadius: '5px',
+    fontSize: '1.2em',
     cursor: 'pointer',
+  },
+  loading: {
+    color: 'white',
+    fontSize: '1.2em',
+  },
+  error: {
+    color: 'red',
+    fontSize: '1.2em',
   },
 };
 
